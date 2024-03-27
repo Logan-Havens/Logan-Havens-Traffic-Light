@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 
-
-//create your first component
 const Home = () => {
-    const [selectedColor, setSelectedColor] = useState("red");
-    const [colors, setColors] = useState(["red", "yellow", "green"]);
+    const [redOn, setRedOn] = useState(false);
+    const [yellowOn, setYellowOn] = useState(false);
+    const [greenOn, setGreenOn] = useState(false);
 
-    const cycleColors = () => {
-        const currentIndex = colors.indexOf(selectedColor);
-        const nextIndex = (currentIndex + 1) % colors.length;
-        setSelectedColor(colors[nextIndex]);
+    const toggleLights = () => {
+        setRedOn(prevState => !prevState);
+        setYellowOn(prevState => !prevState);
+        setGreenOn(prevState => !prevState);
     };
 
     const addPurple = () => {
-        setColors([...colors, "purple"]);
+        setPurpleOn(true);
     };
 
-    return ( 
+    return (
         <div className="traffic-light">
-            <div 
-                onClick={cycleColors}
-                className={"light " + selectedColor + (selectedColor === "purple" ? " purple " : "")}
-            ></div>
-            <button onClick={addPurple}>Add Purple</button>
+            <div className={"light red" + (redOn ? " on" : "")}></div>
+            <div className={"light yellow" + (yellowOn ? " on" : "")}></div>
+            <div className={"light green" + (greenOn ? " on" : "")}></div>
+            <button onClick={toggleLights}>Toggle Lights</button>
         </div>
     );
 };

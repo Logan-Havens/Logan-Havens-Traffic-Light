@@ -1,16 +1,18 @@
-.traffic-light{
+.traffic-light {
     background: black;
     padding: 10px;
     display: inline-block;
 }
-.light{
+
+.light {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    margin-bottom: 10px;
 }
-.red{ background:red;}
-.yellow{ background: yellow;}
-.green{ background: green;}
-.glow{
-    box-shadow: 0px 0px 9px 4px #747de8;
-}
+
+.red { background: red; }
+.yellow { background: yellow; }
+.green { background: green; }
+.on { box-shadow: 0px 0px 9px 4px #747de8; }
+
